@@ -1,20 +1,7 @@
-// Ajoute les données Pokémon en dehors de la fonction du composant
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-    imgSrc: undefined, // Mew n'a pas d'image définie
-  }
-];
+import React from 'react';
 
-// Définition du composant PokemonCard
-function PokemonCard() {
-  // Utilise le premier Pokémon du tableau pour l'affichage initial
-  const pokemon = pokemonList[0]; // Change cet index à 1 pour tester avec Mew
 
+  function PokemonCard({ pokemon }) {
   return (
     <figure>
       {pokemon.imgSrc ? (
