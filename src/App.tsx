@@ -29,24 +29,17 @@ import PokemonCard from "./components/PokemonCard";
   function App() {
     const [pokemonIndex, setPokemonIndex] = useState(0);
 
-    const handleNext = () => {
-      if (pokemonIndex < pokemonList.length - 1) {
-        setPokemonIndex(pokemonIndex + 1);
-      }
-    };
-
-    const handlePrevious = () => {
-      if (pokemonIndex > 0) {
-        setPokemonIndex(pokemonIndex -1);
-      }
-    };
-
+    
   return (
     <div>
-      {/* Passe le Pokémon 'Mew' comme prop au PokemonCard */}
+      <nav>
+        {pokemonList.map((pokemon, index) => (
+          <button key={pokemon.name} onClick={() => setPokemonIndex(index)}>
+          {pokemon.name}
+          </button>
+        ))}
+      </nav>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0 && <button onClick={handlePrevious}>Précédent</button>}
-      {pokemonIndex < pokemonList.length - 1 && <button onClick={handleNext}>Suivant</button>}
     </div>
   );
 }
