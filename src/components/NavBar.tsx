@@ -17,7 +17,12 @@ const NavBar: React.FC<NavBarProps> = ({ setPokemonIndex, pokemonList }) => {
                 <button
                 key={pokemon.name}
                 type="button"
-                onClick={() => setPokemonIndex(index)}
+                onClick={() => {
+                    if (pokemon.name === "pikachu") {
+                        alert("pika pikachu !!!");
+                    }
+                    setPokemonIndex(index);
+                }}
                 >
                     {pokemon.name}
                 </button>
